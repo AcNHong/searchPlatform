@@ -32,11 +32,13 @@ public class DataSourceRegistry {
     @PostConstruct
     public void doInit() {
         System.out.println(1);
-        typeDataSourceMap = new HashMap() {{
-            put(SearchTypeEnum.POST.getValue(), postDataSource);
-            put(SearchTypeEnum.USER.getValue(), userDataSource);
-            put(SearchTypeEnum.PICTURE.getValue(), pictureDataSource);
-        }};
+        typeDataSourceMap = new HashMap() {
+            {
+                put(SearchTypeEnum.POST.getValue(), postDataSource);
+                put(SearchTypeEnum.USER.getValue(), userDataSource);
+                put(SearchTypeEnum.PICTURE.getValue(), pictureDataSource);
+            }
+        };
     }
 
     public DataSource getDataSourceByType(String type) {
